@@ -27,6 +27,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform var(--duration-medium) var(--ease-spring),
+              background-color var(--duration-medium) var(--ease-out);
+}
+
+.doc-card:hover .doc-card-icon {
+  transform: scale(1.08) rotate(-4deg);
+  background: var(--color-accent-soft-strong);
 }
 
 .doc-label {

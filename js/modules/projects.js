@@ -90,7 +90,7 @@ function renderShowcase() {
     createElement('h2', { className: 'projects-title', id: 'projects-title' }, titleText)
   ]);
 
-  const stage = createElement('div', { className: 'orbit-stage', id: 'orbit-stage' });
+  const stage = createElement('div', { className: 'orbit-stage', id: 'orbit-stage', 'data-reveal': '' });
   const parallax = createElement('div', { className: 'orbit-parallax' });
   const tilt = createElement('div', { className: 'orbit-tilt' });
   const ring = createElement('div', { className: 'orbit-ring', id: 'orbit-ring' });
@@ -102,7 +102,7 @@ function renderShowcase() {
   stage.appendChild(parallax);
 
   const hintText = t('projects.orbit_hint') || (state.lang === 'ar' ? 'اسحب للتدوير — اضغط لعرض التفاصيل' : 'Drag to rotate — click a project to view details');
-  const hint = createElement('p', { className: 'orbit-hint' }, hintText);
+  const hint = createElement('p', { className: 'orbit-hint', 'data-reveal': '' }, hintText);
 
   projectsContainer.appendChild(header);
   projectsContainer.appendChild(stage);
@@ -161,7 +161,24 @@ function initOrbitInteraction(stage, ring) {
   if (!count) return;
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const radius = window.innerWidth < 720 ? 260 : 420;
+
+  /**
+   * Computes a swing radius that keeps every panel's worst-case horizontal
+   * extent (center offset + half panel width, ignoring perspective
+   * foreshortening as a conservative upper bound) inside the stage's own
+   * width, so the ring never pushes the page into horizontal scroll and
+   * cards never leave the viewport on narrow phones.
+   */
+  function computeRadius() {
+    const stageWidth = stage.clientWidth || window.innerWidth;
+    const firstPanel = panels[0];
+    const panelWidth = firstPanel ? firstPanel.getBoundingClientRect().width : 240;
+    const idealRadius = window.innerWidth < 480 ? 190 : (window.innerWidth < 720 ? 260 : 420);
+    const maxSafeRadius = Math.max(80, stageWidth / 2 - panelWidth / 2 - 8);
+    return Math.min(idealRadius, maxSafeRadius);
+  }
+
+  let radius = computeRadius();
 
   function positionPanels() {
     panels.forEach((panel, i) => {
@@ -171,6 +188,19 @@ function initOrbitInteraction(stage, ring) {
     });
   }
   positionPanels();
+
+  let resizeTimer = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      radius = computeRadius();
+      positionPanels();
+    }, 150);
+  });
+  window.addEventListener('orientationchange', () => {
+    radius = computeRadius();
+    positionPanels();
+  });
 
   let rotation = 0;
   let velocity = 0;

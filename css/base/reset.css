@@ -36,7 +36,8 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100vh; /* fallback for browsers without dvh support */
+  min-height: 100dvh;
   background-color: var(--color-canvas);
   color: var(--color-text);
   font-family: var(--font-sans);

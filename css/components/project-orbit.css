@@ -14,6 +14,8 @@
   user-select: none;
   -webkit-user-select: none;
   margin-top: var(--space-lg);
+  overflow: hidden;
+  contain: layout;
 }
 .orbit-stage.dragging { cursor: grabbing; }
 
@@ -62,9 +64,9 @@
 
 .orbit-panel:hover,
 .orbit-panel:focus-visible {
-  --s: 1.06;
+  --s: 1.07;
   border-color: var(--color-accent-strong);
-  box-shadow: 0 0 60px rgba(201, 151, 78, 0.25), var(--shadow-lg);
+  box-shadow: 0 0 70px rgba(201, 151, 78, 0.3), var(--shadow-xl);
 }
 
 .orbit-panel-img {
@@ -72,6 +74,12 @@
   height: 62%;
   object-fit: cover;
   flex-shrink: 0;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.orbit-panel:hover .orbit-panel-img,
+.orbit-panel:focus-visible .orbit-panel-img {
+  transform: scale(1.08);
 }
 
 .orbit-panel-body {
@@ -120,6 +128,16 @@
   }
 }
 
+@media (max-width: 420px) {
+  .orbit-stage { height: 360px; }
+  .orbit-panel {
+    width: 138px;
+    height: 184px;
+    margin-left: -69px;
+    margin-top: -92px;
+  }
+}
+
 /* ===== Glass case-study modal (replaces side drawer) ===== */
 .modal-backdrop {
   position: fixed;
@@ -145,7 +163,8 @@
 .project-modal {
   position: relative;
   width: min(760px, 100%);
-  max-height: 85vh;
+  max-height: 85vh; /* fallback */
+  max-height: 85dvh;
   overflow-y: auto;
   background: rgba(19, 19, 22, 0.6);
   backdrop-filter: blur(30px) saturate(160%);

@@ -37,15 +37,36 @@
   z-index: 1;
 }
 
+.timeline-item.is-visible .timeline-marker {
+  animation: ring-pop 0.8s var(--ease-out);
+}
+
 .timeline-marker-col::after {
   content: '';
   position: absolute;
   top: 36px;
   bottom: calc(-1 * var(--space-lg));
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
   width: 1px;
   background: var(--color-divider);
+  transition: transform var(--duration-slow) var(--ease-out);
+  transition-delay: 200ms;
+}
+
+.timeline-item.is-visible .timeline-marker-col::after {
+  transform: translateX(-50%) scaleY(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item.is-visible .timeline-marker {
+    animation: none;
+  }
+  .timeline-marker-col::after {
+    transition: none;
+    transform: translateX(-50%) scaleY(1);
+  }
 }
 
 .timeline-item:last-child .timeline-marker-col::after {

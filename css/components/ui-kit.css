@@ -128,20 +128,76 @@
 
 /* ===== Glass card surface (base recipe reused across sections) ===== */
 .surface-card {
+  position: relative;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--duration-medium) var(--ease-out),
+  transition: transform var(--duration-medium) var(--ease-spring),
               box-shadow var(--duration-medium) var(--ease-out),
               border-color var(--duration-medium) var(--ease-out);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* Hairline accent edge that draws itself in on hover/focus — echoes the
+   nav's gold accent without altering the resting (default) card look. */
+.surface-card::before {
+  content: '';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent-strong), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--duration-medium) var(--ease-out);
+  pointer-events: none;
+}
+
+/* Soft radial glow that fades in behind the card on hover for extra depth */
+.surface-card--interactive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 100% at 50% 0%, var(--color-accent-soft), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--duration-medium) var(--ease-out);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .surface-card--interactive:hover,
 .surface-card--interactive:focus-within {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.01);
   border-color: var(--color-border-strong);
   box-shadow: var(--shadow-lg);
+}
+
+.surface-card--interactive:hover::before,
+.surface-card--interactive:focus-within::before {
+  transform: scaleX(1);
+}
+
+.surface-card--interactive:hover::after,
+.surface-card--interactive:focus-within::after {
+  opacity: 1;
+}
+
+.surface-card--interactive:active {
+  transform: translateY(-2px) scale(0.995);
+  transition-duration: var(--duration-fast);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .surface-card,
+  .surface-card--interactive {
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+  .surface-card--interactive:hover,
+  .surface-card--interactive:focus-within {
+    transform: none;
+  }
 }
 
 /* ===== Tag / chip system ===== */
@@ -163,6 +219,15 @@
   padding: 6px 12px;
   border-radius: var(--radius-pill);
   line-height: 1.2;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-spring);
+}
+
+.tag:hover {
+  border-color: var(--color-accent-strong);
+  color: var(--color-accent-strong);
+  transform: translateY(-1px);
 }
 
 /* ===== Status pill ===== */

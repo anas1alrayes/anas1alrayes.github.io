@@ -86,6 +86,13 @@
   border-radius: var(--radius-sm);
   background: var(--color-accent-soft);
   color: var(--color-accent-strong);
+  transition: transform var(--duration-medium) var(--ease-spring),
+              background-color var(--duration-medium) var(--ease-out);
+}
+
+.about-card:hover .about-card-icon {
+  transform: scale(1.08) rotate(-4deg);
+  background: var(--color-accent-soft-strong);
 }
 
 .about-card-label {

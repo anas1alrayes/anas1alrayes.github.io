@@ -25,7 +25,8 @@
 .lightbox-frame {
   position: relative;
   max-width: min(1100px, 92vw);
-  max-height: 80vh;
+  max-height: 80vh; /* fallback */
+  max-height: 80dvh;
   transform: scale(0.96);
   transition: transform var(--duration-medium) var(--ease-spring);
 }
@@ -36,7 +37,8 @@
 
 .lightbox-image {
   max-width: min(1100px, 92vw);
-  max-height: 80vh;
+  max-height: 80vh; /* fallback */
+  max-height: 80dvh;
   width: auto;
   height: auto;
   border-radius: var(--radius-lg);

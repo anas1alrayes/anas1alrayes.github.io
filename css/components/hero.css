@@ -4,6 +4,8 @@
   padding-top: 156px;
   padding-bottom: var(--space-2xl);
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
 
 @media (min-width: 960px) {
@@ -11,6 +13,27 @@
     padding-top: 200px;
     padding-bottom: var(--space-3xl);
   }
+}
+
+/* Ambient drifting glow — decorative only, cannot affect layout or overflow */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  inset-inline-start: 50%;
+  width: min(640px, 90vw);
+  height: 420px;
+  margin-inline-start: min(-320px, -45vw);
+  background: radial-gradient(closest-side, var(--color-accent-soft), transparent 72%);
+  filter: blur(10px);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+  animation: drift-slow 14s var(--ease-standard) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section::before { animation: none; }
 }
 
 .hero-grid {

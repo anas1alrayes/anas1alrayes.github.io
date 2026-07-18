@@ -20,20 +20,38 @@
   100% { background-position: 200% 0; }
 }
 
+/* Soft ambient drift for decorative background glows (hero, section auras) */
+@keyframes drift-slow {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(14px, -18px, 0) scale(1.06); }
+}
+
+/* Gentle emphasis ring used once when a marker/badge first enters view */
+@keyframes ring-pop {
+  0% { box-shadow: 0 0 0 0 var(--color-accent-soft-strong); }
+  100% { box-shadow: 0 0 0 10px rgba(201, 151, 78, 0); }
+}
+
+/* Accent underline that draws itself in left-to-right (mirrors in RTL via transform-origin) */
+@keyframes underline-draw {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 /* Scroll-reveal utility, driven by IntersectionObserver in js/modules/animations.js */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(22px) scale(0.975);
   filter: blur(6px);
   transition: opacity var(--duration-slow) var(--ease-out),
-              transform var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-spring),
               filter var(--duration-slow) var(--ease-out);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
 [data-reveal].is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   filter: blur(0);
 }
 

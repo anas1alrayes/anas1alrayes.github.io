@@ -20,6 +20,23 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 90px rgba(201, 151, 78, 0.1);
 }
 
+.contact-panel-glow::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  inset-inline-start: 50%;
+  width: 60%;
+  height: 160%;
+  margin-inline-start: -30%;
+  background: radial-gradient(closest-side, var(--color-accent-soft), transparent 70%);
+  opacity: 0.8;
+  animation: drift-slow 16s var(--ease-standard) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-panel-glow::after { animation: none; }
+}
+
 .contact-panel-heading-block {
   position: relative;
   display: flex;

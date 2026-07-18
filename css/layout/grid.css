@@ -73,4 +73,31 @@ section,
   gap: var(--space-xs);
   margin-bottom: var(--space-xl);
   max-width: 640px;
+  position: relative;
+  padding-inline-start: var(--space-sm);
+}
+
+/* Slim accent rail that draws in alongside the header's own reveal —
+   a small recurring motif that ties every section's opening together. */
+.section-header::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, var(--color-accent-strong), transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--duration-slow) var(--ease-out);
+  transition-delay: 120ms;
+}
+
+.section-header.is-visible::before {
+  transform: scaleY(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-header::before { transition: none; }
 }
