@@ -1,0 +1,77 @@
+{
+  "programming": {
+    "title": {
+      "en": "Programming Languages",
+      "ar": "لغات البرمجة"
+    },
+    "items": [
+      "Python",
+      "C++",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ]
+  },
+
+  "desktop": {
+    "title": {
+      "en": "Desktop Application Development",
+      "ar": "تطوير تطبيقات سطح المكتب"
+    },
+    "items": [
+      "Python (PyWebView)",
+      "C# (.NET / WPF)",
+      "REST API Integration",
+      "Application Architecture"
+    ]
+  },
+
+  "automation": {
+    "title": {
+      "en": "Automation & AI",
+      "ar": "الأتمتة والذكاء الاصطناعي"
+    },
+    "items": [
+      "Workflow Automation",
+      "Selenium",
+      "AI-Assisted Development"
+    ]
+  },
+
+  "creative": {
+    "title": {
+      "en": "Creative Tools",
+      "ar": "الأدوات الإبداعية"
+    },
+    "items": [
+      "Adobe After Effects",
+      "DaVinci Resolve",
+      "Adobe Photoshop",
+      "Adobe Lightroom"
+    ]
+  },
+
+  "productivity": {
+    "title": {
+      "en": "Productivity",
+      "ar": "برامج الإنتاجية"
+    },
+    "items": [
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Microsoft PowerPoint"
+    ]
+  },
+
+  "hardware": {
+    "title": {
+      "en": "Technical Knowledge",
+      "ar": "المعرفة التقنية"
+    },
+    "items": [
+      "Computer Hardware",
+      "System Diagnostics",
+      "Windows Troubleshooting"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "shorker",
+  "status": "completed",
+  "category": "Automation Tool",
+
+  "tags": [
+    "Python",
+    "PyQt6",
+    "Automation",
+    "Video Editing"
+  ],
+
+  "dates": {
+    "started": "2024-08",
+    "completed": "2024-12"
+  },
+
+  "cover": "assets/images/projects/shorker/cover.webp",
+
+  "gallery": [
+    "assets/images/projects/shorker/gallery-01.webp",
+    "assets/images/projects/shorker/gallery-02.webp"
+  ],
+
+  "links": {
+    "github": "https://github.com/anasalrayes/shorker",
+    "demo": null
+  },
+
+  "technologies": [
+    "Python",
+    "PyQt6",
+    "OpenCV",
+    "FFmpeg",
+    "yt-dlp",
+    "Selenium"
+  ],
+
+  "title": {
+    "en": "ShorKer",
+    "ar": "شوركر"
+  },
+
+  "description": {
+    "en": "Desktop application for automating short-form video production and publishing.",
+    "ar": "تطبيق سطح مكتب لأتمتة إنتاج ونشر الفيديوهات القصيرة."
+  },
+
+  "overview": {
+    "en": "ShorKer was built to reduce the repetitive work involved in producing short-form content. From collecting source videos to preparing vertical clips and scheduling publication, the application combines the entire workflow into a single desktop interface.",
+    "ar": "طُوِّر «شوركر» لتقليل الوقت والجهد اللازمين لإنتاج المحتوى القصير. يجمع التطبيق مراحل العمل المختلفة، بدءاً من جمع المقاطع، مروراً بمعالجتها وإعدادها، وحتى جدولة نشرها، داخل واجهة واحدة على سطح المكتب."
+  },
+
+  "problem": {
+    "en": "Creating short-form content usually requires moving between several tools to download videos, edit clips, resize them, and publish them across multiple platforms. Repeating this process every day quickly becomes inefficient.",
+    "ar": "يتطلب إنتاج الفيديوهات القصيرة عادةً التنقل بين عدة برامج لتحميل المقاطع، وتحريرها، وتحويلها إلى المقاس المناسب، ثم نشرها على أكثر من منصة. ومع تكرار هذه الخطوات يومياً تصبح العملية مرهقة وتستهلك وقتاً كبيراً."
+  },
+
+  "solution": {
+    "en": "ShorKer automates the entire workflow. It downloads source videos with yt-dlp, prepares vertical clips using OpenCV and FFmpeg, then schedules publication through Selenium—all from a single desktop dashboard.",
+    "ar": "يؤتمت «شوركر» سير العمل بالكامل؛ إذ يجلب المقاطع باستخدام yt-dlp، ويعالجها ويحوّلها إلى فيديوهات رأسية عبر OpenCV وFFmpeg، ثم يتولى جدولة النشر باستخدام Selenium، وكل ذلك من خلال لوحة تحكم موحدة."
+  },
+
+  "features": {
+    "en": [
+      "Automatic video collection using yt-dlp",
+      "Vertical video preparation with OpenCV",
+      "High-speed video processing through FFmpeg",
+      "Scheduled publishing using Selenium automation",
+      "Desktop dashboard built with PyQt6"
+    ],
+    "ar": [
+      "جمع المقاطع تلقائياً باستخدام yt-dlp",
+      "إعداد الفيديوهات الرأسية باستخدام OpenCV",
+      "معالجة سريعة للفيديو بالاعتماد على FFmpeg",
+      "جدولة النشر عبر Selenium",
+      "لوحة تحكم مكتبية مبنية باستخدام PyQt6"
+    ]
+  },
+
+  "lessonsLearned": {
+    "en": "This project strengthened my understanding of video processing pipelines, desktop application architecture, and browser automation. It also taught me how to build workflows that remain reliable despite platform limitations and changing web interfaces.",
+    "ar": "من خلال هذا المشروع تعمقت في معالجة الفيديو برمجياً، وتصميم تطبيقات سطح المكتب، وأتمتة المتصفحات. كما اكتسبت خبرة في بناء سير عمل أكثر استقراراً رغم تغيّر واجهات المنصات والقيود التي تفرضها."
+  }
+}

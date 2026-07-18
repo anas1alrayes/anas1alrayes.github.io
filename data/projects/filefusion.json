@@ -1,0 +1,71 @@
+{
+  "slug": "filefusion",
+  "status": "completed",
+  "category": "Windows Productivity Suite",
+  "tags": ["Python", "JavaScript", "HTML/CSS", "Offline Utility"],
+  "dates": {
+    "started": "2024-01",
+    "completed": "2024-06"
+  },
+  "cover": "assets/images/projects/filefusion/cover.webp",
+  "gallery": [
+    "assets/images/projects/filefusion/gallery-01.webp"
+  ],
+  "links": {
+    "github": "https://github.com/anasalrayes/filefusion",
+    "demo": null
+  },
+  "technologies": ["Python", "pywebview", "LibreOffice", "Pandoc", "HTML/CSS/JS"],
+  "title": {
+    "en": "FileFusion",
+    "ar": "فايل فيوجن"
+  },
+  "description": {
+    "en": "Privacy-first offline document and file conversion desktop engine.",
+    "ar": "منصة مكتبية لتحويل الملفات تعمل محليًا مع الحفاظ الكامل على خصوصية البيانات."
+  },
+  "overview": {
+    "en": "FileFusion is an offline, privacy-first desktop utility for Windows that consolidates file conversion tasks. Users can convert documents, images, and sheets locally without sending sensitive data to cloud servers. It also enables instant PDF generation directly from clipboard data.",
+    "ar": "FileFusion هو تطبيق مكتبي لنظام Windows يجمع أدوات تحويل الملفات في مكان واحد. يعمل بالكامل على الجهاز دون الحاجة إلى الاتصال بالإنترنت، مما يسمح بتحويل المستندات والصور وجداول البيانات مع بقاء جميع الملفات داخل جهاز المستخدم. كما يوفر إنشاء ملفات PDF مباشرة من محتوى الحافظة لتسريع المهام اليومية."
+  },
+  "problem": {
+    "en": "Converting files frequently requires uploading proprietary business documents, academic works, or private photographs to web-based converters, presenting significant privacy risks. Furthermore, relying on internet connections slows down workflows when dealing with batch conversions.",
+    "ar": "تعتمد معظم خدمات تحويل الملفات على رفع المحتوى إلى خوادم خارجية، وهو ما يفرض مخاطرة غير ضرورية عند التعامل مع مستندات خاصة أو ملفات عمل أو صور شخصية. كما أن الاعتماد على الاتصال بالإنترنت يجعل عمليات التحويل المتكررة أو الجماعية أبطأ وأقل كفاءة."
+  },
+  "solution": {
+    "en": "FileFusion solves this by running all conversions completely offline. By wrapping python-based conversion libraries and integrating LibreOffice and Pandoc executables locally, FileFusion provides a fast desktop interface that processes files locally with zero network traffic.",
+    "ar": "يعالج FileFusion هذه المشكلة بتنفيذ جميع عمليات التحويل محليًا دون أي اتصال بالشبكة. يعتمد التطبيق على مكتبات Python مع تكامل مباشر مع LibreOffice وPandoc، مما يوفر واجهة سريعة تنفذ عمليات التحويل بالكامل داخل الجهاز مع الحفاظ على خصوصية البيانات."
+  },
+  "features": {
+    "en": [
+      "Offline Document Conversion (DOCX to PDF, HTML to PDF via Pandoc)",
+      "Image Formatting Engine (convert images to WebP, PNG, JPEG offline)",
+      "Instant Clipboard-to-PDF utility for quick snippets saving",
+      "Offline spreadsheet conversions (XLSX to CSV/PDF)",
+      "Completely offline processing ensuring enterprise-grade privacy"
+    ],
+    "ar": [
+      "تحويل المستندات محليًا مثل DOCX إلى PDF وHTML إلى PDF باستخدام Pandoc.",
+      "تحويل الصور بين WebP وPNG وJPEG دون الحاجة إلى الإنترنت.",
+      "إنشاء ملفات PDF مباشرة من محتوى الحافظة خلال ثوانٍ.",
+      "تحويل جداول البيانات مثل XLSX إلى CSV أو PDF محليًا.",
+      "تنفيذ جميع العمليات داخل الجهاز دون إرسال أي بيانات إلى خدمات خارجية."
+    ]
+  },
+  "architecture": {
+    "en": "Built using a lightweight HTML/CSS/JS frontend styled in vanilla CSS, wrapped inside Python's pywebview framework to form an installer-less Windows desktop app. The backend connects directly to system-level LibreOffice and Pandoc installations to handle rich document layout parses.",
+    "ar": "بُني التطبيق بواجهة تعتمد على HTML وCSS وJavaScript، ثم جرى تغليفها باستخدام pywebview لإنشاء تطبيق مكتبي خفيف لنظام Windows. في الخلفية يتكامل مباشرة مع LibreOffice وPandoc لمعالجة المستندات وتحويلها مع الحفاظ على الأداء والاستقرار."
+  },
+  "challenges": {
+    "en": "Bundling Pandoc and LibreOffice runtimes locally without causing the application footprint to swell significantly was a major challenge. I resolved this by writing a dynamic configuration check that detects existing system installations or points to minimal, portable versions.",
+    "ar": "كان التحدي الأكبر هو الاستفادة من LibreOffice وPandoc دون زيادة حجم التطبيق بشكل ملحوظ. لذلك طورت آلية تتحقق تلقائيًا من وجود هذه البرامج على جهاز المستخدم، وتنتقل إلى نسخ محمولة عند الحاجة، مما حافظ على خفة التطبيق وسهولة تشغيله."
+  },
+  "lessonsLearned": {
+    "en": "I learned how to bridge frontend Javascript contexts with high-performance backend Python threads through pywebview handlers, managing asynchronous job states to keep the UI fully responsive during long conversions.",
+    "ar": "خلال تطوير المشروع اكتسبت خبرة في ربط واجهة JavaScript بخلفية Python عبر pywebview، مع إدارة العمليات غير المتزامنة بطريقة تحافظ على استجابة الواجهة حتى أثناء تنفيذ عمليات تحويل تستغرق وقتًا أطول."
+  },
+  "futureImprovements": {
+    "en": "Plan to add a batch converter queue system, automated folder-watching triggers that convert any newly added files instantly, and support for additional lightweight formats like Markdown and LaTeX.",
+    "ar": "أخطط لإضافة نظام متقدم لإدارة طوابير التحويل، ودعم مراقبة المجلدات لتحويل الملفات الجديدة تلقائيًا، إلى جانب توسيع قائمة الصيغ المدعومة لتشمل تنسيقات مثل Markdown وLaTeX."
+  }
+}

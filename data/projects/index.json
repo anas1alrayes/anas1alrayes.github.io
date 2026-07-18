@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "filefusion",
+    "featured": true
+  },
+  {
+    "slug": "shorker",
+    "featured": false
+  },
+  {
+    "slug": "salatapp",
+    "featured": false
+  }
+]

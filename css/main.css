@@ -1,0 +1,34 @@
+/* main.css - CSS Imports Manifest */
+
+/* 1. Base Layer */
+@import url('base/tokens.css?v=2.0.0');
+@import url('base/reset.css?v=2.0.0');
+@import url('base/typography.css?v=2.0.0');
+
+/* 2. Layout Layer */
+@import url('layout/grid.css?v=2.0.0');
+@import url('layout/header.css?v=2.0.0');
+@import url('layout/footer.css?v=2.0.0');
+
+/* 3. Component Layer */
+@import url('components/ui-kit.css?v=2.0.0');
+@import url('components/nav.css?v=2.0.0');
+@import url('components/hero.css?v=2.0.0');
+@import url('components/about.css?v=2.0.0');
+@import url('components/current-focus.css?v=2.0.0');
+@import url('components/project-orbit.css?v=3.0.0');
+@import url('components/lightbox.css?v=2.0.0');
+@import url('components/skill-matrix.css?v=2.0.0');
+@import url('components/achievements.css?v=2.0.0');
+@import url('components/documents.css?v=2.0.0');
+@import url('components/contact.css?v=2.0.0');
+@import url('components/footer.css?v=2.0.0');
+
+/* 4. Utilities Layer */
+@import url('utilities/helpers.css?v=2.0.0');
+
+/* 5. Animations Layer */
+@import url('animations/keyframes.css?v=2.0.0');
+
+/* 6. RTL Mirror Layer */
+@import url('rtl.css?v=2.0.0');

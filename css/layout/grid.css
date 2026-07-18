@@ -1,0 +1,76 @@
+/* grid.css */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-inline-start: 32px;
+    padding-inline-end: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-inline-start: 40px;
+    padding-inline-end: 40px;
+  }
+}
+
+/* Section vertical rhythm */
+section,
+.section-gap {
+  margin-bottom: var(--space-3xl);
+  scroll-margin-top: 120px;
+}
+
+@media (min-width: 960px) {
+  section,
+  .section-gap {
+    margin-bottom: var(--space-4xl);
+  }
+}
+
+.hairline-divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-divider);
+  border: none;
+  margin: 0;
+}
+
+.flex-row {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.grid-cols-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+}
+
+@media (max-width: 640px) {
+  .grid-cols-12 {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}
+
+/* Reusable section header pattern used across all sections */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xl);
+  max-width: 640px;
+}

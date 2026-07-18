@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Documents Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "label", "file", "pages"],
+    "properties": {
+      "id": { "type": "string" },
+      "label": {
+        "type": "object",
+        "required": ["en", "ar"],
+        "properties": {
+          "en": { "type": "string" },
+          "ar": { "type": "string" }
+        }
+      },
+      "file": { "type": "string" },
+      "pages": { "type": "integer", "minimum": 1 }
+    }
+  }
+}

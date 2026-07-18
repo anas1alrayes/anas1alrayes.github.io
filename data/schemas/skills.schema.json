@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Skills Schema",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": ["title", "items"],
+    "properties": {
+      "title": {
+        "type": "object",
+        "required": ["en", "ar"],
+        "properties": {
+          "en": { "type": "string" },
+          "ar": { "type": "string" }
+        }
+      },
+      "items": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    }
+  }
+}

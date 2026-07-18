@@ -1,0 +1,19 @@
+/* rtl.css */
+
+/* 1. Icon mirroring for directional glyphs (arrows, etc.) */
+[dir="rtl"] .mirror-rtl {
+  transform: scaleX(-1);
+}
+
+/* 2. Text layout refinements for Arabic script */
+[dir="rtl"] body {
+  letter-spacing: normal !important;
+}
+
+[dir="rtl"] .eyebrow,
+[dir="rtl"] .status-pill,
+[dir="rtl"] .nav-link {
+  letter-spacing: normal !important;
+}
+
+/* 3. Modal is centered (not directional), no slide-direction override needed */

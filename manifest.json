@@ -1,0 +1,26 @@
+{
+  "name": "Anas Alrayes Portfolio",
+  "short_name": "Anas Portfolio",
+  "description": "Software Engineering Portfolio of Anas Alrayes",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#08080b",
+  "theme_color": "#08080b",
+  "icons": [
+    {
+      "src": "assets/images/site/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/images/site/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/site/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

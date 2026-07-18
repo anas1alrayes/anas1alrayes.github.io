@@ -1,0 +1,132 @@
+/* tokens.css — Design system primitives
+   Premium dark canvas · single indigo accent · fluid type scale */
+
+:root {
+  /* ===== 1. Spacing (4px rhythm) ===== */
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 140px;
+
+  --container-max-width: 1180px;
+  --container-wide: 1360px;
+
+  /* ===== 2. Radius ===== */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+  --radius-pill: 999px;
+
+  /* ===== 3. Elevation ===== */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 4px 16px -6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 32px -12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 40px 90px -24px rgba(0, 0, 0, 0.65);
+  --shadow-accent: 0 16px 40px -16px rgba(205, 161, 85, 0.5);
+
+  /* ===== 4. Motion ===== */
+  --duration-instant: 100ms;
+  --duration-fast: 180ms;
+  --duration-medium: 300ms;
+  --duration-slow: 520ms;
+  --duration-ambient: 900ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ===== 5. Z-index ===== */
+  --z-below: -1;
+  --z-base: 0;
+  --z-raised: 10;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-drawer: 300;
+  --z-toast: 400;
+
+  /* ===== 6. Color — dark canvas, single indigo accent ===== */
+  --color-canvas: #0c0c0d;
+  --color-canvas-alt: #101011;
+  --color-surface: #17171a;
+  --color-surface-hover: #1d1d20;
+  --color-surface-elevated: #1c1c1f;
+  --color-surface-glass: rgba(255, 255, 255, 0.045);
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
+  --color-divider: rgba(255, 255, 255, 0.08);
+
+  --color-text: #f5f5f7;
+  --color-text-secondary: #b6b6c0;
+  --color-text-muted: #83838d;
+
+  --color-accent: #c9974e;
+  --color-accent-hover: #ddac60;
+  --color-accent-strong: #e2bb72;
+  --color-accent-soft: rgba(201, 151, 78, 0.14);
+  --color-accent-soft-strong: rgba(201, 151, 78, 0.26);
+  --color-on-accent: #ffffff;
+
+  /* Katana-gold decorative accent (dividers, edge highlights, icons) */
+  --color-gold: #c9974e;
+  --color-gold-bright: #e2bb72;
+  --color-gold-soft: rgba(201, 151, 78, 0.16);
+
+  --color-success: #34d399;
+  --color-success-soft: rgba(52, 211, 153, 0.14);
+  --color-warning: #fbbf24;
+  --color-warning-soft: rgba(251, 191, 36, 0.14);
+  --color-danger: #f87171;
+
+  --color-focus-outline: #e2bb72;
+  --color-selection-bg: rgba(201, 151, 78, 0.35);
+  --color-selection-text: #ffffff;
+  --color-scrollbar-thumb: rgba(255, 255, 255, 0.18);
+  --color-scrollbar-track: transparent;
+
+  /* ===== 7. Typography ===== */
+  --font-sans: 'Inter', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-sans);
+  --font-feature-tabular: "tnum";
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.25;
+  --lh-heading: 1.35;
+  --lh-body: 1.6;
+  --lh-relaxed: 1.7;
+
+  /* Fluid type scale — no breakpoint overrides needed */
+  --size-hero: clamp(2.75rem, 2rem + 4.2vw, 5.75rem);
+  --size-display-h1: clamp(2rem, 1.6rem + 2vw, 2.75rem);
+  --size-display-h2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --size-heading-lg: clamp(1.15rem, 1.05rem + 0.5vw, 1.375rem);
+  --size-body-lead: clamp(1.05rem, 1rem + 0.3vw, 1.2rem);
+  --size-body-regular: 1rem;
+  --size-small: 0.9375rem;
+  --size-tabular: clamp(2rem, 1.6rem + 1.6vw, 2.75rem);
+  --size-interface: 0.8125rem;
+  --size-eyebrow: 0.75rem;
+  --size-tiny: 0.75rem;
+}
+
+/* Bilingual typographic parity */
+html[lang="en"] {
+  --font-sans: 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+}
+
+html[lang="ar"] {
+  --font-sans: 'IBM Plex Sans Arabic', 'Inter', system-ui, sans-serif;
+  --lh-body: 1.8;
+  --lh-relaxed: 1.9;
+  --lh-heading: 1.55;
+  --lh-tight: 1.4;
+  --lh-snug: 1.5;
+}

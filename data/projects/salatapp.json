@@ -1,0 +1,69 @@
+{
+  "slug": "salatapp",
+  "status": "completed",
+  "category": "Windows Desktop Utility",
+  "tags": ["C#", "WPF", ".NET 8", "Windows"],
+  "dates": {
+    "started": "2023-09",
+    "completed": "2023-11"
+  },
+  "cover": "assets/images/projects/salatapp/cover.webp",
+  "gallery": [],
+  "links": {
+    "github": "https://github.com/anasalrayes/salatapp",
+    "demo": null
+  },
+  "technologies": ["C#", ".NET 8", "WPF", "Aladhan API"],
+  "title": {
+    "en": "SalatApp",
+    "ar": "صلاتك"
+  },
+  "description": {
+    "en": "A lightweight Windows desktop companion that keeps prayer times visible without interrupting your workflow.",
+    "ar": "تطبيق مكتبي خفيف لنظام Windows يعرض مواقيت الصلاة بطريقة هادئة لا تعطل سير العمل."
+  },
+  "overview": {
+    "en": "SalatApp is a Windows desktop application built to keep prayer times within sight throughout the day. Instead of relying on intrusive pop-ups or distracting notifications, it displays subtle on-screen reminders while continuing to work quietly in the background. The application retrieves accurate prayer times through the Aladhan API and is designed to blend naturally into everyday computer use.",
+    "ar": "صلاتك هو تطبيق مكتبي لنظام Windows صُمم ليبقي مواقيت الصلاة حاضرة أمام المستخدم طوال اليوم دون أن يفرض نفسه على الشاشة. يعتمد على واجهة Aladhan API لجلب المواقيت بدقة، ويعرض تذكيرات هادئة تعمل في الخلفية لتنسجم مع الاستخدام اليومي للحاسب دون تشتيت أو إزعاج."
+  },
+  "problem": {
+    "en": "Traditional desktop notifications are easy to dismiss or ignore, while full-screen reminders interrupt work, meetings, or gaming sessions. Users often have to choose between missing prayer times or dealing with disruptive alerts.",
+    "ar": "الإشعارات التقليدية على سطح المكتب يسهل تجاهلها، بينما تؤدي النوافذ المنبثقة الكبيرة إلى مقاطعة العمل أو الدراسة أو حتى أثناء اللعب. لذلك يحتاج المستخدم إلى وسيلة تذكير تكون واضحة دون أن تفرض نفسها على تجربته."
+  },
+  "solution": {
+    "en": "SalatApp introduces a transparent click-through overlay that remains visible without blocking interaction with other applications. Users can continue working normally while prayer times stay accessible at a glance, combining visibility with a distraction-free experience.",
+    "ar": "يعتمد التطبيق على نافذة شفافة تعمل بخاصية Click-Through، فتظل ظاهرة أمام المستخدم دون أن تمنع التفاعل مع أي برنامج آخر. بهذه الطريقة تبقى مواقيت الصلاة مرئية في جميع الأوقات مع الحفاظ على تجربة استخدام سلسة وغير مزعجة."
+  },
+  "features": {
+    "en": [
+      "Accurate prayer times through Aladhan API integration.",
+      "Transparent click-through desktop overlay built with WPF.",
+      "Lightweight reminder banners that disappear automatically.",
+      "Automatic timezone and location synchronization.",
+      "Runs quietly in the system tray with minimal resource usage."
+    ],
+    "ar": [
+      "جلب مواقيت الصلاة بدقة عبر التكامل مع Aladhan API.",
+      "نافذة شفافة بخاصية Click-Through مبنية باستخدام WPF.",
+      "تذكيرات خفيفة تختفي تلقائياً بعد عرضها.",
+      "مزامنة تلقائية للمنطقة الزمنية والموقع.",
+      "استهلاك منخفض جداً للموارد مع التشغيل بصمت في شريط النظام."
+    ]
+  },
+  "architecture": {
+    "en": "The application is built with C# and WPF on .NET 8 using a layered architecture that separates the user interface from business logic and API communication. Prayer times are fetched asynchronously, while the overlay window relies on native Windows behavior to remain visible without interfering with mouse interactions.",
+    "ar": "بُني التطبيق باستخدام C# وWPF على منصة .NET 8 مع فصل واضح بين واجهة المستخدم ومنطق التطبيق وطبقة الاتصال بالخدمة الخارجية. تُجلب البيانات بشكل غير متزامن، بينما تعتمد النافذة الشفافة على خصائص Windows الأصلية لتبقى مرئية دون اعتراض نقرات المستخدم."
+  },
+  "challenges": {
+    "en": "The most challenging part of the project was implementing a transparent overlay that behaves naturally on Windows. Achieving reliable click-through behavior while maintaining smooth rendering and stable positioning required experimenting with native Windows APIs alongside WPF.",
+    "ar": "أكبر تحدٍ في المشروع كان إنشاء نافذة شفافة تعمل بصورة طبيعية داخل Windows. فقد تطلب الوصول إلى سلوك Click-Through المستقر دمج إمكانيات WPF مع بعض وظائف Windows الأصلية لضمان ثبات الأداء وسلاسة الاستخدام."
+  },
+  "lessonsLearned": {
+    "en": "This project strengthened my understanding of desktop application architecture, asynchronous API communication, and advanced WPF window management. It also taught me how to build software that integrates naturally into a user's workflow instead of demanding their attention.",
+    "ar": "من خلال هذا المشروع تعمقت في تصميم تطبيقات سطح المكتب، وإدارة الاتصال غير المتزامن بواجهات البرمجة، والتعامل مع خصائص WPF المتقدمة. كما تعلمت أن أفضل التطبيقات ليست الأكثر لفتاً للانتباه، بل تلك التي تنجز مهمتها بهدوء وتنسجم مع طريقة عمل المستخدم."
+  },
+  "futureImprovements": {
+    "en": "Future updates may include customizable reminder styles, multiple calculation methods, offline prayer-time caching for extended periods, and optional calendar integration for important Islamic dates.",
+    "ar": "تشمل الخطط المستقبلية إضافة خيارات أوسع لتخصيص شكل التذكيرات، ودعم طرق حساب متعددة، وتحسين العمل دون اتصال عبر تخزين المواقيت لفترات أطول، بالإضافة إلى دمج المناسبات الإسلامية داخل التطبيق."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Achievements Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "year", "date", "title", "issuer", "description", "certificateUrl"],
+    "properties": {
+      "id": { "type": "string" },
+      "year": { "type": "string" },
+      "date": { "type": "string" },
+      "title": {
+        "type": "object",
+        "required": ["en", "ar"],
+        "properties": {
+          "en": { "type": "string" },
+          "ar": { "type": "string" }
+        }
+      },
+      "issuer": {
+        "type": "object",
+        "required": ["en", "ar"],
+        "properties": {
+          "en": { "type": "string" },
+          "ar": { "type": "string" }
+        }
+      },
+      "description": {
+        "type": "object",
+        "required": ["en", "ar"],
+        "properties": {
+          "en": { "type": "string" },
+          "ar": { "type": "string" }
+        }
+      },
+      "certificateUrl": { "type": ["string", "null"] }
+    }
+  }
+}

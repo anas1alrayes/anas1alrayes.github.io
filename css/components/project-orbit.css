@@ -1,0 +1,407 @@
+/* components/project-orbit.css — 3D orbital project showcase (adapted from orbital ring concept) */
+
+.projects-title { margin: 0; }
+
+.orbit-stage {
+  position: relative;
+  height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1300px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  margin-top: var(--space-lg);
+}
+.orbit-stage.dragging { cursor: grabbing; }
+
+.orbit-parallax {
+  position: relative;
+  width: 1px; height: 1px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.orbit-tilt {
+  position: absolute;
+  top: 0; left: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(-16deg);
+  transition: transform 0.8s var(--ease-out);
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 0; left: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.orbit-panel {
+  position: absolute;
+  top: 0; left: 0;
+  width: 240px;
+  height: 300px;
+  margin-left: -120px;
+  margin-top: -150px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 0 40px rgba(201, 151, 78, 0.12), var(--shadow-md);
+  transform: rotateY(var(--ry)) translateZ(var(--tz)) scale(var(--s, 1));
+  transition: transform 0.7s var(--ease-out), box-shadow 0.7s var(--ease-out), border-color 0.7s var(--ease-out);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.orbit-panel:hover,
+.orbit-panel:focus-visible {
+  --s: 1.06;
+  border-color: var(--color-accent-strong);
+  box-shadow: 0 0 60px rgba(201, 151, 78, 0.25), var(--shadow-lg);
+}
+
+.orbit-panel-img {
+  width: 100%;
+  height: 62%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.orbit-panel-body {
+  padding: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.orbit-panel-title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.orbit-panel-desc {
+  font-family: var(--font-sans);
+  font-size: var(--size-tiny);
+  color: var(--color-text-muted);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.orbit-hint {
+  text-align: center;
+  font-family: var(--font-sans);
+  font-size: var(--size-tiny);
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 720px) {
+  .orbit-stage { height: 420px; }
+  .orbit-panel {
+    width: 170px;
+    height: 220px;
+    margin-left: -85px;
+    margin-top: -110px;
+  }
+}
+
+/* ===== Glass case-study modal (replaces side drawer) ===== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: rgba(4, 4, 6, 0.45);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.modal-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: rgba(19, 19, 22, 0.6);
+  backdrop-filter: blur(30px) saturate(160%);
+  -webkit-backdrop-filter: blur(30px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  transform: scale(0.92);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+
+.modal-backdrop.is-active .project-modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-close-btn {
+  position: sticky;
+  float: inline-end;
+  top: var(--space-md);
+  inset-inline-end: var(--space-md);
+  margin: var(--space-md) var(--space-md) -44px auto;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.modal-hero-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-body {
+  padding: var(--space-lg) var(--space-xl) var(--space-xl);
+}
+
+@media (max-width: 560px) {
+  .modal-body { padding: var(--space-md); }
+}
+
+/* ===== Case-study content blocks (reused inside the glass modal) ===== */
+.drawer-content {
+  padding: var(--space-md) var(--space-md) var(--space-2xl);
+}
+
+@media (min-width: 560px) {
+  .drawer-content {
+    padding: var(--space-lg) var(--space-xl) var(--space-2xl);
+  }
+}
+
+.drawer-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.drawer-title-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.drawer-title {
+  margin: 0;
+  font-size: var(--size-display-h2);
+}
+
+.drawer-tagline {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--size-body-regular);
+  line-height: var(--lh-relaxed);
+  max-width: 44ch;
+}
+
+.drawer-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.drawer-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--color-divider);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: var(--space-lg) 0;
+}
+
+@media (min-width: 560px) {
+  .drawer-meta-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.meta-cell {
+  background: var(--color-surface);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-cell-label {
+  font-family: var(--font-sans);
+  font-size: var(--size-tiny);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.meta-cell-value {
+  font-family: var(--font-sans);
+  font-size: var(--size-small);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.cs-block {
+  padding-top: var(--space-xl);
+  margin-top: var(--space-xl);
+  border-top: 1px solid var(--color-divider);
+}
+
+.cs-block-title {
+  font-size: var(--size-heading-lg);
+  margin: 0 0 var(--space-sm);
+}
+
+.cs-text {
+  color: var(--color-text-secondary);
+  line-height: var(--lh-relaxed);
+  margin: 0;
+}
+
+.cs-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .cs-split {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+.cs-split-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.cs-split-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--size-tiny);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent-strong);
+  margin-bottom: 8px;
+}
+
+[dir="rtl"] .cs-split-label {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.cs-feature-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .cs-feature-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cs-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: var(--size-small);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.cs-feature-icon {
+  color: var(--color-success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cs-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.cs-gallery-frame {
+  position: relative;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  aspect-ratio: 16 / 10;
+  background: var(--color-canvas-alt);
+}
+
+.cs-gallery-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.cs-gallery-frame:hover::after,
+.cs-gallery-frame:focus-visible::after {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.cs-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-medium) var(--ease-out);
+}
+
+.cs-gallery-frame:hover .cs-gallery-img,
+.cs-gallery-frame:focus-visible .cs-gallery-img {
+  transform: scale(1.06);
+}
+
+
+@media (max-width: 560px) {
+  .cs-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

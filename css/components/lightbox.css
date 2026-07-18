@@ -1,0 +1,62 @@
+/* components/lightbox.css */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-xl) var(--space-md);
+  background: rgba(4, 4, 6, 0.86);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-medium) var(--ease-out);
+}
+
+.lightbox-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-frame {
+  position: relative;
+  max-width: min(1100px, 92vw);
+  max-height: 80vh;
+  transform: scale(0.96);
+  transition: transform var(--duration-medium) var(--ease-spring);
+}
+
+.lightbox-overlay.is-open .lightbox-frame {
+  transform: scale(1);
+}
+
+.lightbox-image {
+  max-width: min(1100px, 92vw);
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-strong);
+  box-shadow: var(--shadow-xl);
+  object-fit: contain;
+  background: var(--color-canvas-alt);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -16px;
+  inset-inline-end: -16px;
+  background: var(--color-surface-elevated);
+}
+
+.lightbox-caption {
+  font-family: var(--font-sans);
+  font-size: var(--size-small);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0;
+}

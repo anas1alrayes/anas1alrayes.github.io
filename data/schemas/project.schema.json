@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project Schema",
+  "type": "object",
+  "required": [
+    "slug",
+    "status",
+    "category",
+    "tags",
+    "dates",
+    "cover",
+    "gallery",
+    "links",
+    "technologies",
+    "title",
+    "description",
+    "overview",
+    "problem",
+    "solution",
+    "features",
+    "lessonsLearned"
+  ],
+  "properties": {
+    "slug": { "type": "string" },
+    "status": { "type": "string", "enum": ["active", "completed", "maintenance"] },
+    "category": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "dates": {
+      "type": "object",
+      "required": ["started", "completed"],
+      "properties": {
+        "started": { "type": "string" },
+        "completed": { "type": ["string", "null"] }
+      }
+    },
+    "cover": { "type": "string" },
+    "gallery": { "type": "array", "items": { "type": "string" } },
+    "links": {
+      "type": "object",
+      "required": ["github", "demo"],
+      "properties": {
+        "github": { "type": ["string", "null"], "format": "uri" },
+        "demo": { "type": ["string", "null"], "format": "uri" }
+      }
+    },
+    "technologies": { "type": "array", "items": { "type": "string" } },
+    "title": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "description": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "overview": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "problem": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "solution": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "features": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "array", "items": { "type": "string" } },
+        "ar": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "architecture": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "challenges": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "lessonsLearned": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "futureImprovements": {
+      "type": "object",
+      "required": ["en", "ar"],
+      "properties": {
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    }
+  }
+}

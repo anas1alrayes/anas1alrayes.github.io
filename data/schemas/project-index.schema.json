@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project Index Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["slug", "featured"],
+    "properties": {
+      "slug": { "type": "string" },
+      "featured": { "type": "boolean" }
+    }
+  }
+}

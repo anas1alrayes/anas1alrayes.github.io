@@ -1,0 +1,85 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-16",
+
+  "name": {
+    "en": "Anas Alrayes",
+    "ar": "أنس الريس"
+  },
+
+  "title": {
+    "en": "Software Developer",
+    "ar": "خريج ثانوية | مطور برمجيات"
+  },
+
+  "heroIntro": {
+    "en": "I learn by building. When I encounter a repetitive problem, my first instinct is to create a tool instead of solving it manually every time. That's how most of my projects began, and many of them have become applications I continue to use every day.",
+    "ar": "أتعلم البرمجة بالممارسة. عندما أواجه مشكلة متكررة، أفضل أن أبني لها أداة بدلاً من تكرار حلها يدويًا. معظم مشاريعي بدأت بهذه الطريقة، ثم تطورت إلى تطبيقات أستخدمها بشكل يومي."
+  },
+
+  "currentFocus": {
+    "en": [
+      "Software Development",
+      "Artificial Intelligence",
+      "Automation",
+      "Desktop Applications"
+    ],
+    "ar": [
+      "تطوير البرمجيات",
+      "الذكاء الاصطناعي",
+      "الأتمتة",
+      "تطبيقات سطح المكتب"
+    ]
+  },
+
+  "contact": {
+    "email": "anas.alrayes1@gmail.com",
+    "github": "https://github.com/anas1alrayes",
+    "linkedin": null,
+    "location": {
+      "en": "Jeddah, Saudi Arabia",
+      "ar": "جدة، المملكة العربية السعودية"
+    }
+  },
+
+  "stats": [
+    {
+      "id": "gpa",
+      "value": {
+        "en": "99.44%",
+        "ar": "99.44%"
+      },
+      "label": {
+        "en": "High School GPA",
+        "ar": "المعدل التراكمي"
+      }
+    },
+    {
+      "id": "projects",
+      "value": {
+        "en": "3",
+        "ar": "٣"
+      },
+      "label": {
+        "en": "Desktop Applications",
+        "ar": "تطبيقات سطح المكتب"
+      }
+    },
+    {
+      "id": "volunteer",
+      "value": {
+        "en": "235+",
+        "ar": "+٢٣٥"
+      },
+      "label": {
+        "en": "Verified Volunteer Hours",
+        "ar": "ساعات تطوعية معتمدة"
+      }
+    }
+  ],
+
+  "seo": {
+    "url": "https://anasalrayes.com/",
+    "ogImage": "assets/images/site/og-image.webp"
+  }
+}

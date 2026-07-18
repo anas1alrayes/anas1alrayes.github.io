@@ -1,0 +1,29 @@
+[
+  {
+    "id": "resume-ar",
+    "label": {
+      "en": "Resume (Arabic)",
+      "ar": "السيرة الذاتية (بالعربية)"
+    },
+    "file": "assets/documents/resume-ar.pdf",
+    "pages": 1
+  },
+  {
+    "id": "resume-en",
+    "label": {
+      "en": "Resume (English)",
+      "ar": "السيرة الذاتية (بالإنجليزية)"
+    },
+    "file": "assets/documents/resume-en.pdf",
+    "pages": 1
+  },
+  {
+    "id": "supporting-portfolio",
+    "label": {
+      "en": "Supporting Portfolio",
+      "ar": "الملف الداعم للإنجازات"
+    },
+    "file": "assets/documents/supporting-portfolio.pdf",
+    "pages": 15
+  }
+]

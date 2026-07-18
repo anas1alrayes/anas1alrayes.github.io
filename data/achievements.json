@@ -1,0 +1,92 @@
+[
+  {
+    "id": "reading-marathon-2026",
+    "year": "2026",
+    "date": "2026-05",
+    "title": {
+      "en": "4th Place Nationwide — Qimam Taqra Reading Marathon",
+      "ar": "المركز الرابع على مستوى المملكة — ماراثون «قمم تقرأ»"
+    },
+    "issuer": {
+      "en": "King Khalid University",
+      "ar": "جامعة الملك خالد"
+    },
+    "description": {
+      "en": "Awarded fourth place nationwide in the Little Reader category after being evaluated on reading comprehension, speed, and overall performance.",
+      "ar": "حققت المركز الرابع على مستوى المملكة في فئة «القارئ الصغير» بعد تقييم شمل سرعة القراءة، والاستيعاب، وجودة الأداء."
+    },
+    "certificateUrl": "assets/documents/supporting-portfolio.pdf"
+  },
+  {
+    "id": "academic-first-2026",
+    "year": "2026",
+    "date": "2026-04",
+    "title": {
+      "en": "1st Place — Grade 12 Academic Excellence",
+      "ar": "المركز الأول على الصف الثاني عشر في التفوق الدراسي"
+    },
+    "issuer": {
+      "en": "Hamzah bin Abdulmutalib High School",
+      "ar": "ثانوية حمزة بن عبدالمطلب"
+    },
+    "description": {
+      "en": "Graduated at the top of my class during the final semester of high school with a perfect 100% semester average.",
+      "ar": "حصلت على المركز الأول على مستوى المدرسة، وأنهيت الفصل الدراسي الأخير بمعدل كامل 100%."
+    },
+    "certificateUrl": "assets/documents/supporting-portfolio.pdf"
+  },
+  {
+    "id": "writing-retreat-2024",
+    "year": "2024",
+    "date": "2024-07",
+    "title": {
+      "en": "Writing Retreat for Children & Young Adults",
+      "ar": "برنامج «معتزلات الكتابة للأطفال واليافعين»"
+    },
+    "issuer": {
+      "en": "Maken Reading Academy — Jeddah",
+      "ar": "أكاديمية ماكن القرائية — جدة"
+    },
+    "description": {
+      "en": "Completed an intensive creative writing program focused on storytelling, idea development, and direct mentorship from published authors.",
+      "ar": "أتممت برنامجاً مكثفاً في الكتابة الإبداعية وتطوير القصص، تضمن إشرافاً مباشراً من مؤلفين ومتخصصين في المجال."
+    },
+    "certificateUrl": "assets/documents/supporting-portfolio.pdf"
+  },
+  {
+    "id": "cultural-talents-2023",
+    "year": "2023",
+    "date": "2023-11",
+    "title": {
+      "en": "3rd Place — Cultural Talents Competition",
+      "ar": "المركز الثالث — مسابقة المهارات الثقافية"
+    },
+    "issuer": {
+      "en": "Jeddah Education Department",
+      "ar": "إدارة تعليم جدة"
+    },
+    "description": {
+      "en": "Won third place in the Literature track with an original short story as part of the regional cultural talents competition.",
+      "ar": "حققت المركز الثالث في مسار الأدب من خلال مشاركة بقصة قصيرة من تأليفي ضمن مسابقة المهارات الثقافية على مستوى جدة."
+    },
+    "certificateUrl": "assets/documents/supporting-portfolio.pdf"
+  },
+  {
+    "id": "reading-challenge-2020",
+    "year": "2020",
+    "date": "2020-02",
+    "title": {
+      "en": "Regional Finalist — Arab Reading Challenge",
+      "ar": "متأهل لنهائيات المنطقة — تحدي القراءة العربي"
+    },
+    "issuer": {
+      "en": "Makkah Education Department",
+      "ar": "إدارة تعليم منطقة مكة المكرمة"
+    },
+    "description": {
+      "en": "Qualified for the regional finals in Makkah as part of the international Arab Reading Challenge.",
+      "ar": "تأهلت إلى المرحلة النهائية على مستوى منطقة مكة المكرمة ضمن تحدي القراءة العربي."
+    },
+    "certificateUrl": null
+  }
+]

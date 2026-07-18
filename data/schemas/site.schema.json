@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Site Config Schema",
+  "type": "object",
+  "required": [
+    "name",
+    "title",
+    "heroIntro",
+    "currentFocus",
+    "contact",
+    "stats",
+    "seo"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "name": {
+      "type": "object",
+      "required": [
+        "en",
+        "ar"
+      ],
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "ar": {
+          "type": "string"
+        }
+      }
+    },
+    "title": {
+      "type": "object",
+      "required": [
+        "en",
+        "ar"
+      ],
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "ar": {
+          "type": "string"
+        }
+      }
+    },
+    "heroIntro": {
+      "type": "object",
+      "required": [
+        "en",
+        "ar"
+      ],
+      "properties": {
+        "en": {
+          "type": "string"
+        },
+        "ar": {
+          "type": "string"
+        }
+      }
+    },
+    "currentFocus": {
+      "type": "object",
+      "required": [
+        "en",
+        "ar"
+      ],
+      "properties": {
+        "en": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ar": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "email",
+        "github",
+        "linkedin",
+        "location"
+      ],
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "github": {
+          "type": "string",
+          "format": "uri"
+        },
+        "linkedin": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "location": {
+          "type": "object",
+          "required": [
+            "en",
+            "ar"
+          ],
+          "properties": {
+            "en": {
+              "type": "string"
+            },
+            "ar": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "stats": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "value",
+          "label"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "value": {
+            "type": [
+              "object",
+              "string"
+            ],
+            "required": [
+              "en",
+              "ar"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ar": {
+                "type": "string"
+              }
+            }
+          },
+          "label": {
+            "type": "object",
+            "required": [
+              "en",
+              "ar"
+            ],
+            "properties": {
+              "en": {
+                "type": "string"
+              },
+              "ar": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "seo": {
+      "type": "object",
+      "required": [
+        "url",
+        "ogImage"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "ogImage": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
